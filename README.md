@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# REACT_TodoList 📜
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple Todo List application built with React. This app allows you to add new todos, toggle their completion status, delete individual todos, and remove all todos.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Add new todos
+- Toggle the completion status of todos
+- Automatic Updates for Individual Todo Items: Each todo item updates automatically when its state changes.
+- Delete individual todos
+- Remove all todos
+- Complete all todos
 
-### `npm start`
+## Demo Video
+![todoList](https://github.com/user-attachments/assets/09c41277-8465-40c2-bd66-1ed373f9d6fc)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[🤩Watch All](https://youtu.be/IyU5N1Bh8qc)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Sorting of Todo Items:
 
-### `npm test`
+- Completed Todos: Sorted in ascending order by ID.
+- Incomplete Todos: Positioned at the top and sorted in descending order by ID
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Prerequisites
 
-### `npm run build`
+Make sure you have Node.js and npm installed. You can download them from [nodejs.org](https://nodejs.org/).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. npm install express ws
+2. npm add react-dom
+3. Client: npm start / Server: to start the server from the server.js file -> Open a terminal and run node server.js 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Debugging
+- The issue with the onCompleteAll PUT request returning a 400 Bad Request error was due to sending data:-1. This data was not valid, so I modified the request to use an empty body.
+- Additionally, since updating all todos can be done successfully with a POST request, I changed the implementation to use a POST request instead.
+- Empty inputs are now treated as 'No title'.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
