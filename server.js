@@ -4,6 +4,7 @@ const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
 const cors = require('cors'); // CORS 패키지 임포트
+const path = require('path');
 
 // Express 앱 생성
 const app = express();
@@ -134,4 +135,12 @@ app.use((err, req, res, next) => {
 // 서버 시작
 server.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
+});
+
+// React 앱 빌드 후 정적 파일 제공
+app.use(express.static(path.join(__dirname, 'build')));
+
+// 모든 경로에서 index.html을 반환 (React 앱의 라우팅을 처리)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.js'));
 });
